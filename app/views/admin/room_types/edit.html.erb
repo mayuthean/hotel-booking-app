@@ -1,0 +1,28 @@
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h4 class="page-title">Add Room</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+              <%=form_for ([:admin, @room_type]) do |f| %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Title</label>
+                                <%=f.text_field :title, class: "form-control"%>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="m-t-20 text-center">
+                        <%=f.submit "Save", class: "btn btn-primary submit-btn"%>
+                        <%=link_to "Cancel", admin_room_types_path, class: "btn btn-danger submit-btn"%>
+                    </div>
+                <%end%>
+            </div>
+        </div>
+    </div>

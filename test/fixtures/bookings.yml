@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  check_in: 2019-08-10 15:45:00
+  check_out: 2019-08-10 15:45:00
+  description: MyText
+
+two:
+  first_name: MyString
+  last_name: MyString
+  check_in: 2019-08-10 15:45:00
+  check_out: 2019-08-10 15:45:00
+  description: MyText

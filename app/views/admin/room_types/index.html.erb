@@ -1,0 +1,46 @@
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="col-sm-4 col-4">
+                <h4 class="page-title">All Room Types</h4>
+            </div>
+            <div class="col-sm-8 col-8 text-right m-b-20">
+                <%=link_to "Add Room Type", new_admin_room_type_path, class: "btn btn btn-primary btn-rounded float-right "%>
+            </div>
+        </div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="table-responsive">
+							<table class="table table-striped custom-table">
+								<thead>
+									<tr>
+                    <th>Room ID</th>
+										<th>Title</th>
+
+										<th class="text-right">Action</th>
+									</tr>
+								</thead>
+								<tbody>
+                  <%@room_types.each do |room_type| %>
+						      <tr>
+                    <td><%=room_type.id%></td>
+                    <td><%=room_type.title%></td>
+
+										<td class="text-right">
+											<div class="dropdown dropdown-action">
+												<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+												<div class="dropdown-menu dropdown-menu-right">
+													<i class="fa fa-pencil m-r-5"></i> <%=link_to "edit", edit_admin_room_type_path(room_type), class: "dropdown-item"%>
+													<i class="fa fa-trash-o m-r-5"></i><%=link_to "Delete", admin_room_type_path(room_type), class: "dropdown-item", method: :delete, data: {confirm: "Are You Sure!"}%>
+												</div>
+											</div>
+										</td>
+									</tr>
+                  <%end%>
+								</tbody>
+							</table>
+						</div>
+					</div>
+        </div>
+      </div>
+  </div>

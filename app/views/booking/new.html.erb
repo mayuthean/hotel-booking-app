@@ -1,0 +1,124 @@
+<!--Custom Hero Area-->
+		<section class="custom-hero blue-overlay" style="background: url(assets/images/custom-hero-bg.jpg) no-repeat">
+			<div class="container">
+				<div class="row justify-content-center cl-white">
+					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 centered wow fadeInUp" data-wow-delay="0.3s">
+						<div class="custom-hero-title">
+							<h2>Room Details</h2>
+						</div>
+						<div class="custom-hero-breadcrumb">
+							<ul>
+								<li><a href="#">Home</a></li>
+								<li>Room Details</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><!--/Custom Hero Area-->
+    <!--Room Details Area-->
+		<section class="room-details-area section-padding pb-60">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-md-12">
+						<div class="room-gallery wow fadeInUp" data-wow-delay="0.3s">
+							<div class="slider-wrapper">
+							  <div class="slider-for">
+							    <div class="slider-for__item ex1" data-src="https://unsplash.it/870/870">
+							      <img src="assets/images/room-gallery/1.jpg" alt="" />
+							    </div>
+
+							    <div class="slider-for__item ex1" data-src="https://unsplash.it/871/870">
+							      <img src="assets/images/room-gallery/2.jpg" alt="" />
+							    </div>
+
+							    <div class="slider-for__item ex1" data-src="https://unsplash.it/872/870">
+							      <img src="assets/images/room-gallery/3.jpg" alt="" />
+							    </div>
+
+							    <div class="slider-for__item ex1" data-src="https://unsplash.it/873/870">
+							      <img src="assets/images/room-gallery/4.jpg" alt="" />
+							    </div>
+							  </div>
+
+							  <div class="slider-nav">
+							    <div class="slider-nav__item">
+							      <img src="assets/images/room-gallery/1.jpg" alt="" />
+							    </div>
+
+							    <div class="slider-nav__item">
+							      <img src="assets/images/room-gallery/2.jpg" alt="" />
+							    </div>
+
+							    <div class="slider-nav__item">
+							      <img src="assets/images/room-gallery/3.jpg" alt="" />
+							    </div>
+
+							    <div class="slider-nav__item">
+							      <img src="assets/images/room-gallery/4.jpg" alt="" />
+							    </div>
+							  </div>
+							</div>
+						</div>
+						<div class="room-details-content wow fadeInUp" data-wow-delay="0.4s">
+							<h2 class="cl-black">About Atrium Suites</h2>
+							<p>Whole wound wrote at whose to style in. Figure ye innate former do so we. Shutters but sir yourself provided you required his. So neither related he am do believe. Nothing but you hundred had use regular. Fat sportsmen arranging preferred can. Busy paid like is oh. Dinner our ask talent her age hardly. eglected collected an attention listening do abilities. <br><br> Article nor prepare chicken you him now. Shy merits say advice ten before lovers innate add. She cordially behaviour can attempted estimable. Trees delay fancy noise manor do as an small.Felicity now law securing breeding likewise extended and. Roused either who favour why ham. </p>
+
+							<div class="row mb-40">
+								<div class="col-md-4 col-sm-12 col-xs-12 mb-40">
+									<ul>
+										<li><i class="fa fa-check"></i>Double Bed</li>
+										<li><i class="fa fa-check"></i>Coffee Maker</li>
+										<li><i class="fa fa-check"></i>Free Wi-Fi</li>
+										<li><i class="fa fa-check"></i>Breakfast Include</li>
+									</ul>
+								</div>
+								<div class="col-md-4 col-sm-12 col-xs-12 mb-40">
+									<ul>
+										<li><i class="fa fa-check"></i>Free Newspaper</li>
+										<li><i class="fa fa-check"></i>50" LED TV</li>
+										<li><i class="fa fa-check"></i>Air Conditioner</li>
+										<li><i class="fa fa-check"></i>Beach side of Hotel</li>
+									</ul>
+								</div>
+								<div class="col-md-4 col-sm-12 col-xs-12 mb-40">
+									<ul>
+										<li><i class="fa fa-check"></i>100 Sq mt</li>
+										<li><i class="fa fa-check"></i>3 Persons</li>
+										<li><i class="fa fa-check"></i>Sauna</li>
+										<li><i class="fa fa-check"></i>24h Butler Service</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 wow fadeInRight" data-wow-delay="0.4s">
+						<div class="page-sidebar">
+							<div class="single-sidebar-block price-tag">
+								<h3>Price</h3>
+								<h4><%=@room.price%><span>/Per Night</span></h4>
+							</div>
+							<div class="single-sidebar-block booking-form">
+								<h3>Booking</h3>
+							  <%=form_for([@room, @booking], url: room_booking_index_path(@room)) do |f|%>
+                  <%=f.text_field :first_name, placeholder:"First Name"%>
+                  <%=f.text_field :last_name, placeholder:"Last Name"%>
+                  <div class="row">
+                    <div class="col-6">
+                      <%=f.datetime_field :check_in, placeholder:"Checkin", class:"hasDatepicker"%>
+  										</div>
+                      <div class="col-6">
+    											<%=f.datetime_field :check_out, placeholder:"Checkout", class:"hasDatepicker"%>
+    									</div>
+                  </div>
+                  <div class="row">
+                    <%=f.text_area :description, placeholder:"Your Message"%>
+                  </div>
+									<button class="bttn btn-fill btn-success" type="submit">Booking</button>
+								<%end%>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><!--/Listing Details Area-->

@@ -1,0 +1,43 @@
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="col-sm-4 col-4">
+                <h4 class="page-title">All Rooms</h4>
+            </div>
+            <div class="col-sm-8 col-8 text-right m-b-20">
+              <%=link_to "Add Room", new_admin_room_path, class: "fa fa-plus btn btn btn-primary btn-rounded float-right "%>
+            </div>
+        </div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="table-responsive">
+							<table class="table table-striped custom-table">
+								<thead>
+									<tr>
+                    <th>Room ID</th>
+										<th>Room number</th>
+										<th>Price</th>
+                    <th>Room type</th>
+										<th class="text-right">Action</th>
+									</tr>
+								</thead>
+								<tbody>
+                  <%@rooms.each do |room| %>
+						      <tr>
+                    <td><%=room.id%></td>
+                    <td><%=room.room_no%></td>
+										<td><%=number_to_currency(room.price)%></td>
+										<td><%=room.room_type.title%></td>
+										<td class="text-right">
+											<%=link_to "Edit", edit_admin_room_path(room)%> |
+                      <%=link_to "Delete", admin_room_path(room), method: :delete, data:{confirm: "Are you sure"}%>
+										</td>
+									</tr>
+                  <%end%>
+								</tbody>
+							</table>
+						</div>
+					</div>
+        </div>
+      </div>
+  </div>
