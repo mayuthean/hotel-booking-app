@@ -2,7 +2,7 @@
     <div class="content">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
-                <h4 class="page-title">Add Room</h4>
+                <h4 class="page-title">Edit Room</h4>
             </div>
         </div>
 
@@ -27,12 +27,18 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Room type</label>
-                                <input class="form-control" type="text">
+                                  <%=f.collection_select :room_type_id, RoomType.all, :id, :title, {}, class: "select form-control"%>
                             </div>
-
                         </div>
                     </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                              <%=f.file_field :image, class:"custom-file-input"%>
+                        </div>
+                      </div>
 
+                    </div>
                     <div class="form-group">
                         <label>Description</label>
                         <%=f.text_area :description, class: "form-control"%>

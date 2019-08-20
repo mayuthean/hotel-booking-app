@@ -1,5 +1,5 @@
 <!--Custom Hero Area-->
-		<section class="custom-hero blue-overlay" style="background: url(assets/images/custom-hero-bg.jpg) no-repeat">
+		<section class="custom-hero blue-overlay" style="background: url(http://dryaire.com/wp-content/uploads/2018/06/hero-pool.jpg) no-repeat">
 			<div class="container">
 				<div class="row justify-content-center cl-white">
 					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 centered wow fadeInUp" data-wow-delay="0.3s">
@@ -25,7 +25,7 @@
 							<div class="slider-wrapper">
 							  <div class="slider-for">
 							    <div class="slider-for__item ex1" data-src="https://unsplash.it/870/870">
-							      <img src="assets/images/room-gallery/1.jpg" alt="" />
+							      <img src="<%=@room.image%>" alt="" />
 							    </div>
 
 							    <div class="slider-for__item ex1" data-src="https://unsplash.it/871/870">
@@ -105,16 +105,16 @@
                   <%=f.text_field :last_name, placeholder:"Last Name"%>
                   <div class="row">
                     <div class="col-6">
-                      <%=f.datetime_field :check_in, placeholder:"Checkin", class:"hasDatepicker"%>
+                      <%=f.date_field :check_in, placeholder:"Checkin"%>
   										</div>
                       <div class="col-6">
-    											<%=f.datetime_field :check_out, placeholder:"Checkout", class:"hasDatepicker"%>
+    											<%=f.date_field :check_out, placeholder:"Checkout"%>
     									</div>
                   </div>
                   <div class="row">
                     <%=f.text_area :description, placeholder:"Your Message"%>
                   </div>
-									<button class="bttn btn-fill btn-success" type="submit">Booking</button>
+									<%=f.submit "Booking", class:"bttn btn-fill btn-success"%>
 								<%end%>
 							</div>
 						</div>

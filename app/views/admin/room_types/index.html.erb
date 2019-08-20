@@ -15,8 +15,9 @@
 								<thead>
 									<tr>
                     <th>Room ID</th>
+                    <th>Image</th>
 										<th>Title</th>
-
+                    <th>Price</th>
 										<th class="text-right">Action</th>
 									</tr>
 								</thead>
@@ -24,16 +25,17 @@
                   <%@room_types.each do |room_type| %>
 						      <tr>
                     <td><%=room_type.id%></td>
+                    <td><img src="<%=room_type.image%>" width="40" height="40" class="rounded-circle"></td>
                     <td><%=room_type.title%></td>
-
+                    <td>Price</td>
 										<td class="text-right">
-											<div class="dropdown dropdown-action">
-												<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-												<div class="dropdown-menu dropdown-menu-right">
-													<i class="fa fa-pencil m-r-5"></i> <%=link_to "edit", edit_admin_room_type_path(room_type), class: "dropdown-item"%>
-													<i class="fa fa-trash-o m-r-5"></i><%=link_to "Delete", admin_room_type_path(room_type), class: "dropdown-item", method: :delete, data: {confirm: "Are You Sure!"}%>
-												</div>
-											</div>
+                      <%=link_to edit_admin_room_type_path(room_type) do %>
+                          <span class="text-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                      <%end%>
+                      <%=link_to admin_room_type_path(room_type), method: :delete, data:{confirm: "Are you sure"} do %>
+                          <span class="text-danger"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                      <%end%>
+
 										</td>
 									</tr>
                   <%end%>

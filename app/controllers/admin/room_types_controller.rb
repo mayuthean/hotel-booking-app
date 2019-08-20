@@ -38,6 +38,6 @@ class Admin::RoomTypesController < ApplicationController
       @room_type = RoomType.find(params[:id])
     end
     def room_type_params
-      params.require(:room_type).permit(:title)
+      params.require(:room_type).permit(:title,:image)
     end
 end

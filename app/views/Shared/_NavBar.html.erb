@@ -1,7 +1,9 @@
 <div class="main-wrapper">
         <div class="header">
 			<div class="header-left">
-				<%=link_to "Hotel", admin_rooms_path()%>
+        <%=link_to  admin_rooms_path(),class:"logo" do%>
+					<img src="https://vignette.wikia.nocookie.net/goanimate/images/4/4d/Royal_Powers.png/revision/latest?cb=20181224201206" width="35" height="35" alt=""> <span>Hotel</span>
+				<%end%>
 			</div>
 			<div class="menubar">
 				<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
@@ -24,14 +26,14 @@
                             <ul class="notification-list">
                                 <li class="notification-message">
                                     <a href="activities.html">
-                                        <div class="media">
-											<span class="avatar">
-												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
-											</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">John Doe</span> booking a new room<span class="noti-title"></span></p>
-												<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
-											</div>
+                                    <div class="media">
+          											<span class="avatar">
+          												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+          											</span>
+          											<div class="media-body">
+          												<p class="noti-details"><span class="noti-title">John Doe</span> booking a new room<span class="noti-title"></span></p>
+          												<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+          											</div>
                                         </div>
                                     </a>
                                 </li>
@@ -95,13 +97,13 @@
 							<span class="status online"></span></span>
                         <span>Admin</span>
                     </a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="profile.html">My Profile</a>
-						<a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
-						<a class="dropdown-item" href="settings.html">Settings</a>
+      					<div class="dropdown-menu">
+      						<a class="dropdown-item" href="profile.html">My Profile</a>
+      						<a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+      						<a class="dropdown-item" href="settings.html">Settings</a>
 
-            <%=link_to "Logout", destroy_admin_session_path, method: :delete, class: "dropdown-item" %>
-					</div>
+                  <%=link_to "Logout", destroy_admin_session_path, method: :delete, class: "dropdown-item" %>
+      					</div>
                 </li>
             </ul>
 
@@ -111,19 +113,27 @@
                     <ul>
                         <li class="menu-title">Main</li>
                         <li class="active" >
-                            <a class="active" href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                          <%=link_to admin_rooms_path(), class:"active" do %>
+                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            <%end%>
                         </li>
               						<li class="submenu">
               							<a href="#"><i class="fa fa-key" aria-hidden="true"></i><span>Rooms</span> <span class="menu-arrow"></span></a>
               							<ul style="display: none;">
               								<li><%=link_to "Add Room", new_admin_room_path%></li>
-                              <li><%=link_to "Add Room Type", new_admin_room_type_path%></li>
+                              <li><%=link_to "All Room", admin_rooms_path%></li>
 
-							      </ul>
-						</li>
+							              </ul>
+					          	      </li>
+                            <li class="submenu">
+                							<a href="#"><i class="fa fa-key" aria-hidden="true"></i><span>Rooms Type</span> <span class="menu-arrow"></span></a>
+                							<ul style="display: none;">
+                								<li><%=link_to "Add room type", new_admin_room_type_path%></li>
+                                <li><%=link_to "All room type", admin_room_types_path%></li>
 
-
-            </ul>
+  							              </ul>
+  					          	      </li>
+                      </ul>
                 </div>
             </div>
         </div>

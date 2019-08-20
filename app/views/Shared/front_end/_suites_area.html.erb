@@ -14,13 +14,13 @@
           <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
             <div class="single-room-block">
               <div class="best-sell-tag">Best Sell</div>
-              <h3><a href="room-details.html"><%=room_type.title%></a></h3>
+              <img src="<%=room_type.image%>" alt="">
+              <h3 class="text-center"><a href=""><%=room_type.title%></a></h3>
               <p>This room has high ceilings, a custom queen bed, bespoke and vintage furnishings.</p>
               <div class="rooms-book-price">
                 <%=link_to room_type_rooms_path(room_type),class: "btn btn-primary" do %>
                   Explore <i class="ti-arrow-right"></i>
                 <%end%>
-                <span>$105 <i>/Night</i></span>
               </div>
             </div>
           </div>
