@@ -10,12 +10,13 @@ Rails.application.routes.draw do
   devise_for :admins
 
   namespace :admin do
+    root "rooms#index"
     resources :rooms
     resources :room_types
   end
 
   resources :rooms do
-    resources :booking 
+    resources :booking
   end
 
 end
